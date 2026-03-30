@@ -2,4 +2,4 @@ COMANDOS PARA FUCIONAR:
 
 npm install
 npm install -D typescript ts-node @types/node
-npx ts-node src/cli.ts
+npm run start
