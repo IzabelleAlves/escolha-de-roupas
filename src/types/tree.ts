@@ -1,6 +1,7 @@
 export type UserProfile = {
     estilo: "casual" | "moderno" | "elegante";
     prioridade: "conforto" | "estetica";
+    genero: "masculino" | "feminino";
 };
 
 export type DecisionOption = {
