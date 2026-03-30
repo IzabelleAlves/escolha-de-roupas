@@ -1,5 +1,5 @@
 import readline from "readline";
-import { tree } from "./data/knowledge";
+import { tree } from "./tree";
 import { UserProfile, DecisionNode } from "./types/tree";
 
 // ================= UTIL =================
@@ -16,7 +16,7 @@ async function digitar(texto: string) {
 }
 
 async function pensando() {
-    process.stdout.write("\n🤖 Pensando");
+    process.stdout.write("\nPensando");
     for (let i = 0; i < 3; i++) {
         await delay(300);
         process.stdout.write(".");
@@ -45,7 +45,7 @@ async function perguntarOpcaoValida(
         const resposta = await perguntar(texto);
 
         if (resposta.toLowerCase() === "x") {
-            console.log("\n👋 Encerrando...");
+            console.log("\nEncerrando...");
             process.exit();
         }
 
@@ -55,14 +55,14 @@ async function perguntarOpcaoValida(
             return index;
         }
 
-        console.log("❌ Entrada inválida! Digite uma opção válida.\n");
+        console.log("Entrada inválida! Digite uma opção válida.\n");
     }
 }
 
 // ================= APP =================
 async function iniciar() {
     console.clear();
-    await digitar("👕 ASSISTENTE DE ROUPA INTELIGENTE\n");
+    await digitar("ASSISTENTE DE ROUPA INTELIGENTE\n");
 
     // ===== GÊNERO =====
     const generoIndex = await perguntarOpcaoValida(
@@ -131,7 +131,7 @@ async function iniciar() {
             const resposta = await perguntar(texto);
 
             if (resposta.toLowerCase() === "x") {
-                console.log("\n👋 Encerrando...");
+                console.log("\nEncerrando...");
                 process.exit();
             }
 
@@ -140,7 +140,7 @@ async function iniciar() {
                     currentNode = historico.pop()!;
                     caminho.pop();
                 } else {
-                    console.log("⚠️ Você já está no início.");
+                    console.log("Você já está no início.");
                 }
                 break;
             }
@@ -166,7 +166,7 @@ async function iniciar() {
                 break;
             }
 
-            console.log("❌ Entrada inválida! Tente novamente.\n");
+            console.log("Entrada inválida! Tente novamente.\n");
         }
     }
 

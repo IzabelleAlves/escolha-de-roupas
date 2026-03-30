@@ -1,17 +1,19 @@
-export type UserProfile = {
+type UserProfile = {
     estilo: "casual" | "moderno" | "elegante";
     prioridade: "conforto" | "estetica";
     genero: "masculino" | "feminino";
 };
 
-export type DecisionOption = {
+type DecisionOption = {
     label: string;
     nextNodeId: string;
 };
 
-export type DecisionNode = {
+type DecisionNode = {
     id: string;
     question?: string;
     options?: DecisionOption[];
     result?: (profile: UserProfile) => string;
 };
+
+export { UserProfile, DecisionNode, DecisionOption };
